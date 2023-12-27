@@ -6,7 +6,7 @@ const todoList = document.querySelector(".list-group");
 const firstCardBody = document.querySelectorAll(".card-body")[0];
 const secondCardBody = document.querySelectorAll(".card-body")[1];
 const filter = document.querySelector("#filter");
-const clearButton = document.querySelector("#clear-tools");
+const clearButton = document.querySelector("#clear-todos");
 
 eventListeners();
 
@@ -29,6 +29,7 @@ function clearAllTodos(e)
         }
         localStorage.removeItem("todos");
     }
+    showAlert("success","All todos are deleted!❌")
 }
 
 function filterTodos(e)
