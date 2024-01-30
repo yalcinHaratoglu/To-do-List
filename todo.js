@@ -45,7 +45,7 @@ function filterTodos(e)
         }
         else
         {
-            listItem.setAttribute("style","display : block");
+            listItem.setAttribute("style","display : flex !important");
         }
     })
 }
@@ -56,7 +56,7 @@ function deleteTodo(e)
     {
         e.target.parentElement.parentElement.remove();
         deleteTodoFromStorage(e.target.parentElement.parentElement.textContent);
-        showAlert("success","Todo deleted succesfully.✔");
+        showAlert("success","To-do deleted succesfully.✔");
     }
 }
 
@@ -94,7 +94,7 @@ function addTodo(e)
         addTodoToUI(newTodo); 
         addTodoToStorage(newTodo);
 
-        showAlert("success","Todo added successfully.👏");
+        showAlert("success","To-do added successfully.👏");
     }
 
 
@@ -147,7 +147,7 @@ function addTodoToUI(newTodo)  //string değerini ekleyecek.
     link.className = "delete-item";
     link.innerHTML = "<i class = 'fa fa-remove'></i>";
 
-    listItem.className = "list-group-item d-flex justify-content-between";
+    listItem.className = "list-group-item";
 
     //Text Node Ekleme
     listItem.appendChild(document.createTextNode(newTodo));
